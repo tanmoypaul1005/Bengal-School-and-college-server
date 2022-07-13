@@ -1,0 +1,11 @@
+const app = require("express");
+const { AddSubject, getSubject, addStudentCourse, getEnrolCourse, getcourseStudent, getClassLecture ,getTeacherSubject} = require("../../Controller/Academic/SubjectController");
+const router = app.Router();
+router.get('/subject', getSubject);
+router.post('/subject/add', AddSubject);
+router.post('/subject/student/add', addStudentCourse);
+router.post('/get/subject/student', getEnrolCourse);
+router.post('/get/course/student', getcourseStudent);
+router.post('/student/classlecture/:id', getClassLecture);
+router.post('/get/teacher/subject',getTeacherSubject);
+module.exports = router;
